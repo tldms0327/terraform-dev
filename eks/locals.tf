@@ -13,10 +13,10 @@ locals {
 
   provider_url = module.eks.cluster_oidc_url
 
-  #   worker_role_arn  = module.eks.worker_role_arn
-  #   worker_role_name = module.eks.worker_role_name
+  worker_role_arn  = module.eks.worker_role_arn
+  worker_role_name = module.eks.worker_role_name
 
-  #   instance_profile_name = module.eks.worker_instance_profile_name
+  instance_profile_name = module.eks.worker_instance_profile_name
 
   worker_policies = [
     # aws_iam_policy.worker-ce.arn,
@@ -41,11 +41,11 @@ locals {
   iam_group = "admin"
 
   iam_roles = [
-    # {
-    #   name   = "system:node:{{EC2PrivateDNSName}}"
-    #   role   = format("arn:aws:iam::%s:role/%s", local.account_id, local.worker_role_name)
-    #   groups = ["system:bootstrappers", "system:nodes"]
-    # },
+    {
+      name   = "system:node:{{EC2PrivateDNSName}}"
+      role   = format("arn:aws:iam::%s:role/%s", local.account_id, local.worker_role_name)
+      groups = ["system:bootstrappers", "system:nodes"]
+    },
     {
       name   = "k8s-master"
       role   = format("arn:aws:iam::%s:role/k8s-master", local.account_id)

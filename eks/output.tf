@@ -26,10 +26,10 @@ output "cluster_vpc_config" {
   value = module.eks.cluster_vpc_config.0
 }
 
-# # output "worker_role_name" {
-# #   value = local.worker_role_name
-# # }
+output "worker_role_name" {
+  value = local.worker_role_name
+}
 
-# output "worker_security_group" {
-#   value = local.worker_security_groups
-# }
+output "worker_security_group" {
+  value = local.worker_security_groups
+}
