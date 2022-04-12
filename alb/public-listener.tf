@@ -51,7 +51,7 @@ resource "aws_lb_listener_rule" "public_https--argocd" {
 
   condition {
     host_header {
-      values = ["argocd.kkarinn.com"]
+      values = ["argocd.kkarin.com"]
     }
   }
 
