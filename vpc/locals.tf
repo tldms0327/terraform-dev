@@ -4,6 +4,6 @@ locals {
   }
 
   eks_tags = {
-    "kubernetes.io/cluster/eks-demo" = "shared"
+    "kubernetes.io/cluster/eks-dev" = "shared"
   }
 }
