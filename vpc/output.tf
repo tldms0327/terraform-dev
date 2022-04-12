@@ -47,3 +47,7 @@ output "vgw_id" {
   description = "The ID of the VPN Gateway"
   value       = module.vpc.vgw_id
 }
+
+output "security_group_id" {
+  value = aws_security_group.public.id
+}
