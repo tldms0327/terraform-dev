@@ -20,8 +20,8 @@ module "workers" {
   volume_type = "gp3"
   volume_size = "30"
 
-  min = 2
-  max = 3
+  min = 1
+  max = 2
 
   tags = local.tags
 }
